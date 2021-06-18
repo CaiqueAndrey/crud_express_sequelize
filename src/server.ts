@@ -1,11 +1,11 @@
 import express from "express";
-
-const port = process.env.PORT || 3001;
+require('dotenv').config();
+const port = process.env.NODE_PORT;
 
 const server = express();
 
 server.use(require('./app'));
 
 server.listen(port, () => {
-  console.log('Server started');
+  console.log(`Server started in port ${port}`);
 });
